@@ -1,3 +1,3 @@
 export interface MachinesInterface {
-  machines: [{ machine: string; state: string }];
+  machines: { machine_section: string; machine_state: string }[];
 }
