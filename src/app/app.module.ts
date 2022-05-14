@@ -11,11 +11,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { MachinesModule } from 'src/app/shared/machines/machines.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ControlPanelModule } from 'src/app/controlPanel/control-panel.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    ControlPanelModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
