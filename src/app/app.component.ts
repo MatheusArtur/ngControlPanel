@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { MachinesService } from 'src/app/shared/machines/services/machine.service';
+import { getMachinesAction } from 'src/app/shared/machines/store/machines.actions';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,9 @@ import { MachinesService } from 'src/app/shared/machines/services/machine.servic
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private machineservice: MachinesService) {}
+  constructor(private machineservice: MachinesService, private store: Store) {}
 
-  async ngOnInit(): Promise<void> {
-    const machines = await this.machineservice.getMachines();
-    console.log(machines);
+  ngOnInit(): void {
+    this.store.dispatch(getMachinesAction());
   }
 }

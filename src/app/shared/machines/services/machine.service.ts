@@ -1,12 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interface';
-
-import jsonData from './responseMock.json';
 
 @Injectable()
 export class MachinesService {
-  getMachines(): Promise<MachinesInterface> {
-    return Promise.resolve(jsonData);
+  constructor(private http: HttpClient) {}
+  getMachines(): Observable<MachinesInterface> {
+    const url = 'http://localhost:3002/machines';
+    return this.http
+      .get<MachinesInterface>(url)
+      .pipe(map((response: MachinesInterface) => response));
   }
 }
