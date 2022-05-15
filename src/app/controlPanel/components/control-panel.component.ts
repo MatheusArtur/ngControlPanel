@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MachineListType } from 'src/app/shared/machines/interfaces/machines.interface';
+import { MachineListType } from 'src/app/shared/machines/interfaces/machines.interfaces';
 import {
   getMachineIcon,
   getStatusIcon,

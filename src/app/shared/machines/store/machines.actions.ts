@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interface';
+import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
 import { MachineActionTypes } from 'src/app/shared/machines/store/machines.types';
 
 export const getMachinesAction = createAction(MachineActionTypes.GET_MACHINES);

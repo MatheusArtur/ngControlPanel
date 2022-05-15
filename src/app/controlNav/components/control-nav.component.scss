@@ -3,9 +3,10 @@
   flex-direction: row;
   align-items: center;
 }
+
 .buhler-header {
   @include centered-row;
-  min-height: 75px;
+  min-height: 70px;
   background-color: lightgrey;
   justify-content: flex-end;
   border-bottom: 5px solid #00a89c;
@@ -19,43 +20,47 @@
   .horizontal-section {
     @include centered-row;
     margin-right: 30px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     .mat-icon {
-      margin-right: 10px;
+      margin-right: 5px;
     }
   }
 }
+
 .machine-list {
   @include centered-row;
   background-color: lightgrey;
   .machine-tab {
     @include centered-row;
     justify-content: center;
-    height: 65px;
+    height: 60px;
     width: 130px;
     position: relative;
     padding: 0 15px;
     p {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
     .mat-icon {
       position: absolute;
-      right: 10px;
-      top: 10px;
+      right: 5px;
+      top: 5px;
     }
   }
 }
+
 .alarm {
   background-color: #fe3636;
   color: white;
 }
+
 .warning {
   background-color: #ff9704;
   color: white;
 }
+
 .running {
   .mat-icon {
-    color: green;
+    color: #75b209;
   }
 }

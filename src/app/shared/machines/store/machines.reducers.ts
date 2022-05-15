@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interface';
+import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
 import {
   getMachinesAction,
   getMachinesSuccessAction,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
-import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interface';
+import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
 
 import { MachinesService } from 'src/app/shared/machines/services/machine.service';
 import {
