@@ -1,1 +1,22 @@
-<p>eu sou o ximbinha</p>
+<div class="row">
+  <hr class="line" />
+  <ng-container *ngFor="let machine of machineList">
+    <div class="column">
+      <div [ngClass]="['card', machine.machine_state]">
+        <mat-icon class="material-icons-outlined">
+          {{ getMachineIcon(machine.machine_section) }}
+        </mat-icon>
+        <div class="status-row">
+          <mat-icon [class]="'status'">
+            {{ getStatusIcon(machine.machine_state) }}
+          </mat-icon>
+        </div>
+        <div class="section-row">
+          <p>
+            {{ machine.machine_section }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

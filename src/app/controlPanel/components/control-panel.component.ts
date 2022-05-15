@@ -15,9 +15,14 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
 })
 export class ControlPanelComponent implements OnInit {
   machines$: Observable<MachineListType | null>;
+  machineList: MachineListType | null = null;
+  getMachineIcon: Function;
+  getStatusIcon: Function;
 
   constructor(private store: Store) {
     this.machines$ = this.store.pipe(select(machinesMonitorSelector));
+    this.getMachineIcon = getMachineIcon;
+    this.getStatusIcon = getStatusIcon;
   }
 
   ngOnInit(): void {
@@ -25,6 +30,6 @@ export class ControlPanelComponent implements OnInit {
   }
 
   initValues(): void {
-    this.machines$.subscribe((val) => console.log(val));
+    this.machines$.subscribe((machineSub) => (this.machineList = machineSub));
   }
 }

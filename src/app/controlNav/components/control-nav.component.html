@@ -1,0 +1,25 @@
+<div>
+  <div class="buhler-header">
+    <div class="buhler-logo">
+      <img src="assets/svg/buhler-logo.svg" />
+    </div>
+    <div class="spacer"></div>
+    <div class="horizontal-section">
+      <mat-icon>schedule</mat-icon>
+      <div class="clock-time">{{ time | date: 'dd.MM.yyyy HH:mm' }}</div>
+    </div>
+    <div class="horizontal-section">
+      <mat-icon class="material-icons-outlined">account_circle</mat-icon>
+      <div class="operator-name">Operator</div>
+    </div>
+  </div>
+  <div class="machine-list">
+    <div
+      [ngClass]="['machine-tab', machine.machine_state]"
+      *ngFor="let machine of machineList"
+    >
+      <p>{{ machine.machine_section }}</p>
+      <mat-icon>{{ this.getStatusIcon(machine.machine_state) }}</mat-icon>
+    </div>
+  </div>
+</div>

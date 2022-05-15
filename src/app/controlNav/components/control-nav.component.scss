@@ -1,0 +1,61 @@
+@mixin centered-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.buhler-header {
+  @include centered-row;
+  min-height: 75px;
+  background-color: lightgrey;
+  justify-content: flex-end;
+  border-bottom: 5px solid #00a89c;
+  .buhler-logo {
+    justify-self: flex-start;
+    margin-left: 30px;
+  }
+  .spacer {
+    flex-grow: 1;
+  }
+  .horizontal-section {
+    @include centered-row;
+    margin-right: 30px;
+    font-size: 1.2rem;
+    .mat-icon {
+      margin-right: 10px;
+    }
+  }
+}
+.machine-list {
+  @include centered-row;
+  background-color: lightgrey;
+  .machine-tab {
+    @include centered-row;
+    justify-content: center;
+    height: 65px;
+    width: 130px;
+    position: relative;
+    padding: 0 15px;
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .mat-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+}
+.alarm {
+  background-color: #fe3636;
+  color: white;
+}
+.warning {
+  background-color: #ff9704;
+  color: white;
+}
+.running {
+  .mat-icon {
+    color: green;
+  }
+}

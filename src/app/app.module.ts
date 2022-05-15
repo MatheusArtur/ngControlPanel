@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { MachinesModule } from 'src/app/shared/machines/machines.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ControlPanelModule } from 'src/app/controlPanel/control-panel.module';
+import { ControlNavModule } from 'src/app/controlNav/control-nav.modules';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { ControlPanelModule } from 'src/app/controlPanel/control-panel.module';
     ControlPanelModule,
     HttpClientModule,
     AppRoutingModule,
+    ControlNavModule,
     BrowserAnimationsModule,
     MatIconModule,
     EffectsModule.forRoot([]),
