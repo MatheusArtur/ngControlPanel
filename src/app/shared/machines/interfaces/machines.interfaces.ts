@@ -3,6 +3,6 @@ export type MachineResponseInterface = {
   machine_state: string;
 }[];
 
-export interface MachinesInterface {
+export interface MachinesStateInterface {
   machines: MachineResponseInterface | null;
 }

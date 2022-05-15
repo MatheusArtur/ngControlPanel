@@ -1,26 +1,29 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { MachinesInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachinesStateInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
 import {
   getMachinesAction,
   getMachinesSuccessAction,
 } from 'src/app/shared/machines/store/machines.actions';
 
-const initialState: MachinesInterface = {
-  machines: [],
+const initialState: MachinesStateInterface = {
+  machines: null,
 };
 
 const machinesReducer = createReducer(
   initialState,
-  on(getMachinesAction, (state): MachinesInterface => state),
+  on(getMachinesAction, (state): MachinesStateInterface => state),
   on(
     getMachinesSuccessAction,
-    (state, action): MachinesInterface => ({
+    (state, action): MachinesStateInterface => ({
       ...state,
       machines: action.machines,
     })
   )
 );
 
-export function machinesReducers(state: MachinesInterface, action: Action) {
+export function machinesReducers(
+  state: MachinesStateInterface,
+  action: Action
+) {
   return machinesReducer(state, action);
 }

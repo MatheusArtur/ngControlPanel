@@ -15,7 +15,7 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
 })
 export class ControlNavComponent implements OnInit {
   machines$: Observable<MachineResponseInterface | null>;
-  machineList: MachineResponseInterface;
+  machineList: MachineResponseInterface = [];
 
   getMachineIcon: Function;
   getStatusIcon: Function;
