@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { MachinesService } from 'src/app/shared/machines/services/machine.service';
 import { getMachinesAction } from 'src/app/shared/machines/store/machines.actions';
 
 @Component({
@@ -9,9 +9,10 @@ import { getMachinesAction } from 'src/app/shared/machines/store/machines.action
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private machineservice: MachinesService, private store: Store) {}
+  constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
     this.store.dispatch(getMachinesAction());
+    this.router.navigateByUrl('/control-panel');
   }
 }

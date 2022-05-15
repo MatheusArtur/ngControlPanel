@@ -22,5 +22,5 @@ export const getMachineIcon = (section: string): string => {
   if (section in sections) {
     return sections[section as keyof typeof sections];
   }
-  return '';
+  return 'precision_manufacturing';
 };
