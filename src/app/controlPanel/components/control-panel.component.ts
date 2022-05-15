@@ -15,7 +15,7 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
 })
 export class ControlPanelComponent implements OnInit {
   machines$: Observable<MachineListType | null>;
-  machineList: MachineListType | null = null;
+  machineList: MachineListType = [];
   getMachineIcon: Function;
   getStatusIcon: Function;
 
@@ -30,6 +30,8 @@ export class ControlPanelComponent implements OnInit {
   }
 
   initValues(): void {
-    this.machines$.subscribe((machineSub) => (this.machineList = machineSub));
+    this.machines$.subscribe(
+      (machineSub) => (this.machineList = machineSub || [])
+    );
   }
 }
