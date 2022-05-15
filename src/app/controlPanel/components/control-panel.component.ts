@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MachineListType } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachineResponseInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
 import {
   getMachineIcon,
   getStatusIcon,
@@ -14,13 +14,12 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
   styleUrls: ['./control-panel.component.scss'],
 })
 export class ControlPanelComponent implements OnInit {
-  machines$: Observable<MachineListType | null>;
-  machineList: MachineListType = [];
+  machines$: Observable<MachineResponseInterface | null>;
+  machineList: MachineResponseInterface;
   getMachineIcon: Function;
   getStatusIcon: Function;
 
   constructor(private store: Store) {
-    this.machines$ = this.store.pipe(select(machinesMonitorSelector));
     this.getMachineIcon = getMachineIcon;
     this.getStatusIcon = getStatusIcon;
   }
@@ -30,6 +29,7 @@ export class ControlPanelComponent implements OnInit {
   }
 
   initValues(): void {
+    this.machines$ = this.store.pipe(select(machinesMonitorSelector));
     this.machines$.subscribe(
       (machineSub) => (this.machineList = machineSub || [])
     );

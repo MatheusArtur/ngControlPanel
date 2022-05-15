@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MachineListType } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachineResponseInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
 import {
   getMachineIcon,
   getStatusIcon,
@@ -14,8 +14,8 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
   styleUrls: ['./control-nav.component.scss'],
 })
 export class ControlNavComponent implements OnInit {
-  machines$: Observable<MachineListType | null>;
-  machineList: MachineListType | null = null;
+  machines$: Observable<MachineResponseInterface | null>;
+  machineList: MachineResponseInterface;
 
   getMachineIcon: Function;
   getStatusIcon: Function;
@@ -23,7 +23,6 @@ export class ControlNavComponent implements OnInit {
   intervalReference: any;
 
   constructor(private store: Store) {
-    this.machines$ = this.store.pipe(select(machinesMonitorSelector));
     this.getMachineIcon = getMachineIcon;
     this.getStatusIcon = getStatusIcon;
     this.intervalReference = setInterval(() => {
@@ -36,6 +35,7 @@ export class ControlNavComponent implements OnInit {
   }
 
   initValues(): void {
+    this.machines$ = this.store.pipe(select(machinesMonitorSelector));
     this.machines$.subscribe((machines) => (this.machineList = machines));
   }
 }
