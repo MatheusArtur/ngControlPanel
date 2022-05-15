@@ -19,7 +19,7 @@
       [ngClass]="['machine-tab', machine.machine_state]"
       *ngFor="let machine of machineList"
     >
-      <mat-icon>{{ this.getStatusIcon(machine.machine_state) }}</mat-icon>
+      <mat-icon>{{ getStateIcon(machine.machine_state) }}</mat-icon>
       <p>{{ machine.machine_section }}</p>
     </div>
   </div>

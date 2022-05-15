@@ -2,7 +2,7 @@
   <ng-container *ngFor="let machine of machineList; let i = index">
     <div [ngClass]="['card', machine.machine_state]">
       <mat-icon [class]="'status'">
-        {{ getStatusIcon(machine.machine_state) }}
+        {{ getStateIcon(machine.machine_state) }}
       </mat-icon>
       <mat-icon class="material-icons-outlined">
         {{ getMachineIcon(machine.machine_section) }}

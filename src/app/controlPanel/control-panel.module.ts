@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ControlPanelComponent } from 'src/app/controlPanel/components/control-panel.component';
 import { MatIconModule } from '@angular/material/icon';
+import { IconsService } from 'src/app/shared/machines/services/icons.service';
 
 const routes = [
   {
@@ -14,6 +15,6 @@ const routes = [
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes), MatIconModule],
   declarations: [ControlPanelComponent],
-  providers: [],
+  providers: [IconsService],
 })
 export class ControlPanelModule {}
