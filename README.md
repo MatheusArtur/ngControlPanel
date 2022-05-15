@@ -8,7 +8,6 @@ This project requires [json-server](https://github.com/typicode/json-server) to 
 
 ```
 npm install -g json-server
-
 ```
 
 Start JSON Server
@@ -24,3 +23,17 @@ Some error occurred Error: listen EADDRINUSE: address already in use 127.0.0.1:3
 ```
 
 That means there's a process running using 127.0.0.1:3002. [Solution](https://stackoverflow.com/questions/4075287/node-express-eaddrinuse-address-already-in-use-kill-server)
+
+## Running the Project
+
+With the mock json-server up, install npm packages
+
+```
+npm i
+```
+
+and run it with Angular
+
+```
+ng serve --open
+```
