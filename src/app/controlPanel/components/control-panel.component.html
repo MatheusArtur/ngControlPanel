@@ -3,7 +3,7 @@
     *ngFor="let machine of (machines$ | async)?.machines; let last = last"
   >
     <div [ngClass]="['card', machine.machine_state]">
-      <mat-icon [class]="'status'">
+      <mat-icon class="status">
         {{ getStateIcon(machine.machine_state) }}
       </mat-icon>
       <mat-icon class="material-icons-outlined">

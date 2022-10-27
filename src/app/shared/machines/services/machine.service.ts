@@ -8,7 +8,6 @@ export class MachinesService {
   constructor(private http: HttpClient) {}
   getMachines(): Observable<MachineResponseInterface> {
     const url = 'http://localhost:3002/machines';
-    console.log(this.http.get<MachineResponseInterface>(url));
     return this.http.get<MachineResponseInterface>(url);
   }
 }

@@ -16,7 +16,6 @@ export class ControlPanelComponent {
 
   constructor(private store: Store, private iconsService: IconsService) {
     this.machines$ = this.store.pipe(select(machinesMonitorSelector));
-    console.log(this.machines$);
   }
 
   getMachineIcon(section: any) {

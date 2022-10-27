@@ -23,7 +23,6 @@ export class MachinesEffect {
       switchMap(() => {
         return this.machinesService.getMachines().pipe(
           map((machines: MachineResponseInterface) => {
-            console.log(machines);
             return getMachinesSuccessAction({ machines });
           }),
           catchError(() => {
