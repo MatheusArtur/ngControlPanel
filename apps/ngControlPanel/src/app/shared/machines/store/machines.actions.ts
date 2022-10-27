@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { MachineResponse } from '../../../../app/shared/machines/interfaces/machines.interfaces';
-import { MachineActionTypes } from '../../../../app/shared/machines/store/machines.enums';
+import { MachineResponse } from '../interfaces/machines.interfaces';
+import { MachineActionTypes } from './machines.enums';
 
 export const getMachinesAction = createAction(MachineActionTypes.GET_MACHINES);
 
