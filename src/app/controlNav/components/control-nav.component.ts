@@ -11,33 +11,24 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
   templateUrl: './control-nav.component.html',
   styleUrls: ['./control-nav.component.scss'],
 })
-export class ControlNavComponent implements OnInit {
+export class ControlNavComponent {
   machines$: Observable<MachineResponseInterface | null>;
-  machineList: MachineResponseInterface = [];
 
   time = new Date();
   intervalReference: any;
 
   constructor(private store: Store, private iconsService: IconsService) {
+    this.machines$ = this.store.pipe(select(machinesMonitorSelector));
     this.intervalReference = setInterval(() => {
       this.time = new Date();
     }, 1000);
   }
 
-  ngOnInit(): void {
-    this.initValues();
-  }
-
-  initValues(): void {
-    this.machines$ = this.store.pipe(select(machinesMonitorSelector));
-    this.machines$.subscribe((machines) => (this.machineList = machines));
-  }
-
-  getMachineIcon(section) {
+  getMachineIcon(section: any) {
     return this.iconsService.getMachineIcon(section);
   }
 
-  getStateIcon(state) {
+  getStateIcon(state: any) {
     return this.iconsService.getStateIcon(state);
   }
 }

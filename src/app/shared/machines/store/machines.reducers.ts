@@ -6,7 +6,7 @@ import {
 } from 'src/app/shared/machines/store/machines.actions';
 
 const initialState: MachinesStateInterface = {
-  machines: null,
+  machinesData: null,
 };
 
 const machinesReducer = createReducer(
@@ -16,7 +16,7 @@ const machinesReducer = createReducer(
     getMachinesSuccessAction,
     (state, action): MachinesStateInterface => ({
       ...state,
-      machines: action.machines,
+      machinesData: action.machines,
     })
   )
 );

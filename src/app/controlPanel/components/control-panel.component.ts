@@ -11,26 +11,19 @@ import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.
   templateUrl: './control-panel.component.html',
   styleUrls: ['./control-panel.component.scss'],
 })
-export class ControlPanelComponent implements OnInit {
+export class ControlPanelComponent {
   machines$: Observable<MachineResponseInterface | null>;
-  machineList: MachineResponseInterface = [];
 
-  constructor(private store: Store, private iconsService: IconsService) {}
-
-  ngOnInit(): void {
-    this.initValues();
-  }
-
-  initValues(): void {
+  constructor(private store: Store, private iconsService: IconsService) {
     this.machines$ = this.store.pipe(select(machinesMonitorSelector));
-    this.machines$.subscribe((machineSub) => (this.machineList = machineSub));
+    console.log(this.machines$);
   }
 
-  getMachineIcon(section) {
+  getMachineIcon(section: any) {
     return this.iconsService.getMachineIcon(section);
   }
 
-  getStateIcon(state) {
+  getStateIcon(state: any) {
     return this.iconsService.getStateIcon(state);
   }
 }

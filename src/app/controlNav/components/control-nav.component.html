@@ -17,7 +17,7 @@
   <div class="machine-list">
     <div
       [ngClass]="['machine-tab', machine.machine_state]"
-      *ngFor="let machine of machineList"
+      *ngFor="let machine of (machines$ | async)?.machines"
     >
       <mat-icon>{{ getStateIcon(machine.machine_state) }}</mat-icon>
       <p>{{ machine.machine_section }}</p>

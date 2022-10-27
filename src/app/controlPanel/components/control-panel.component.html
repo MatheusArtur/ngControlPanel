@@ -1,5 +1,7 @@
 <div class="row">
-  <ng-container *ngFor="let machine of machineList; let i = index">
+  <ng-container
+    *ngFor="let machine of (machines$ | async)?.machines; let last = last"
+  >
     <div [ngClass]="['card', machine.machine_state]">
       <mat-icon [class]="'status'">
         {{ getStateIcon(machine.machine_state) }}
@@ -11,6 +13,6 @@
         {{ machine.machine_section }}
       </p>
     </div>
-    <div class="line" *ngIf="i < machineList.length - 1"></div>
+    <div class="line" *ngIf="!last"></div>
   </ng-container>
 </div>
