@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MachineResponseInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachineResponse } from 'src/app/shared/machines/interfaces/machines.interfaces';
 
 @Injectable()
 export class MachinesService {
   constructor(private http: HttpClient) {}
-  getMachines(): Observable<MachineResponseInterface> {
+  getMachines(): Observable<MachineResponse> {
     const url = 'http://localhost:3002/machines';
-    return this.http.get<MachineResponseInterface>(url);
+    return this.http.get<MachineResponse>(url);
   }
 }

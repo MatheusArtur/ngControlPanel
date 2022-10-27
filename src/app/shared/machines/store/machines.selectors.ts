@@ -1,10 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { MachinesStateInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachinesState } from 'src/app/shared/machines/interfaces/machines.interfaces';
 
-export const machinesFeatureSelector =
-  createFeatureSelector<MachinesStateInterface>('machines');
+export const machinesFeature = createFeatureSelector<MachinesState>('machines');
 
-export const machinesMonitorSelector = createSelector(
-  machinesFeatureSelector,
-  (machinesState: MachinesStateInterface) => machinesState.machinesData
+export const machinesMonitor = createSelector(
+  machinesFeature,
+  (machinesState: MachinesState) => machinesState.machinesData
 );

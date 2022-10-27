@@ -1,14 +1,14 @@
-export type MachineInterface = {
+export type Machine = {
   machine_section: string;
   machine_state: string;
   sectionIcon: string | null;
   stateIcon: string | null;
 };
 
-export type MachineResponseInterface = {
-  machines: MachineInterface[];
+export type MachineResponse = {
+  machines: Machine[];
 };
 
-export interface MachinesStateInterface {
-  machinesData: MachineResponseInterface | null;
+export interface MachinesState {
+  machinesData: MachineResponse | null;
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
-import { MachineResponseInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachineResponse } from 'src/app/shared/machines/interfaces/machines.interfaces';
 
 import { MachinesService } from 'src/app/shared/machines/services/machine.service';
 import {
@@ -24,7 +24,7 @@ export class MachinesEffect {
       ofType(getMachinesAction),
       switchMap(() => {
         return this.machinesService.getMachines().pipe(
-          map((machinesResponse: MachineResponseInterface) => {
+          map((machinesResponse: MachineResponse) => {
             machinesResponse.machines.map((machine) => {
               machine.sectionIcon = this.iconsService.getSectionIcon(
                 machine.machine_section
