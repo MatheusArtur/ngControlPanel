@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { getMachinesAction } from 'src/app/shared/machines/store/machines.actions';
+import { getMachinesAction } from '../app/shared/machines/store/machines.actions';
 
 @Component({
   selector: 'app-root',

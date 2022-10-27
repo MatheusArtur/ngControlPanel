@@ -1,9 +1,9 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { MachinesState } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachinesState } from '../interfaces/machines.interfaces';
 import {
   getMachinesAction,
   getMachinesSuccessAction,
-} from 'src/app/shared/machines/store/machines.actions';
+} from '../store/machines.actions';
 
 const initialState: MachinesState = {
   machinesData: null,

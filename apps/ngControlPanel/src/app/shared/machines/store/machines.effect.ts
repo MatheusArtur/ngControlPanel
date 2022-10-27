@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
-import { MachineResponse } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachineResponse } from '../interfaces/machines.interfaces';
 
-import { MachinesService } from 'src/app/shared/machines/services/machine.service';
+import { MachinesService } from '../services/machine.service';
 import {
   getMachinesAction,
   getMachinesFailureAction,
   getMachinesSuccessAction,
-} from 'src/app/shared/machines/store/machines.actions';
+} from '../store/machines.actions';
 import { IconsService } from '../services/icons.service';
 
 @Injectable()

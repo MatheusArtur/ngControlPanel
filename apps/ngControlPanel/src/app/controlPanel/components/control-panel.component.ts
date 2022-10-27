@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { MachineResponse } from 'src/app/shared/machines/interfaces/machines.interfaces';
-import { machinesMonitor } from 'src/app/shared/machines/store/machines.selectors';
+import { MachineResponse } from '../../shared/machines/interfaces/machines.interfaces';
+import { machinesMonitor } from '../../shared/machines/store/machines.selectors';
 
 @Component({
   selector: 'control-panel',

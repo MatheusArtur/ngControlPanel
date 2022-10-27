@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MachineResponse } from 'src/app/shared/machines/interfaces/machines.interfaces';
+import { MachineResponse } from '../interfaces/machines.interfaces';
 
 @Injectable()
 export class MachinesService {

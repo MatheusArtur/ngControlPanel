@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatIconModule } from '@angular/material/icon';
-import { ControlNavComponent } from 'src/app/controlNav/components/control-nav.component';
+import { ControlNavComponent } from '../controlNav/components/control-nav.component';
 
 @NgModule({
   imports: [CommonModule, MatIconModule],
