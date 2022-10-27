@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { MachineResponseInterface } from 'src/app/shared/machines/interfaces/machines.interfaces';
-import { IconsService } from 'src/app/shared/machines/services/icons.service';
 import { machinesMonitorSelector } from 'src/app/shared/machines/store/machines.selectors';
 
 @Component({
@@ -17,18 +16,10 @@ export class ControlNavComponent {
   time = new Date();
   intervalReference: any;
 
-  constructor(private store: Store, private iconsService: IconsService) {
+  constructor(private store: Store) {
     this.machines$ = this.store.pipe(select(machinesMonitorSelector));
     this.intervalReference = setInterval(() => {
       this.time = new Date();
     }, 1000);
-  }
-
-  getMachineIcon(section: any) {
-    return this.iconsService.getMachineIcon(section);
-  }
-
-  getStateIcon(state: any) {
-    return this.iconsService.getStateIcon(state);
   }
 }

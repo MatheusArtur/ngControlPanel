@@ -9,12 +9,14 @@ import {
   getMachinesFailureAction,
   getMachinesSuccessAction,
 } from 'src/app/shared/machines/store/machines.actions';
+import { IconsService } from '../services/icons.service';
 
 @Injectable()
 export class MachinesEffect {
   constructor(
     private actions$: Actions,
-    private machinesService: MachinesService
+    private machinesService: MachinesService,
+    private iconsService: IconsService
   ) {}
 
   getmachines$ = createEffect(() =>
@@ -22,8 +24,17 @@ export class MachinesEffect {
       ofType(getMachinesAction),
       switchMap(() => {
         return this.machinesService.getMachines().pipe(
-          map((machines: MachineResponseInterface) => {
-            return getMachinesSuccessAction({ machines });
+          map((machinesResponse: MachineResponseInterface) => {
+            machinesResponse.machines.map((machine) => {
+              machine.sectionIcon = this.iconsService.getSectionIcon(
+                machine.machine_section
+              );
+              machine.stateIcon = this.iconsService.getStateIcon(
+                machine.machine_state
+              );
+            });
+            console.log(machinesResponse);
+            return getMachinesSuccessAction({ machinesResponse });
           }),
           catchError(() => {
             return of(getMachinesFailureAction());

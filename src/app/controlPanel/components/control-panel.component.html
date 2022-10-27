@@ -4,10 +4,10 @@
   >
     <div [ngClass]="['card', machine.machine_state]">
       <mat-icon class="status">
-        {{ getStateIcon(machine.machine_state) }}
+        {{ machine.stateIcon }}
       </mat-icon>
       <mat-icon class="material-icons-outlined">
-        {{ getMachineIcon(machine.machine_section) }}
+        {{ machine.sectionIcon }}
       </mat-icon>
       <p class="section-row">
         {{ machine.machine_section }}

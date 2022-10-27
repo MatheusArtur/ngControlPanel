@@ -14,7 +14,7 @@ export class IconsService {
     }
     return 'sync_problem';
   }
-  getMachineIcon(section: string): string {
+  getSectionIcon(section: string): string {
     const sections = {
       Scale: 'system_update_alt',
       Attacher: 'chrome_reader_mode',

@@ -16,7 +16,7 @@ const machinesReducer = createReducer(
     getMachinesSuccessAction,
     (state, action): MachinesStateInterface => ({
       ...state,
-      machinesData: action.machines,
+      machinesData: action.machinesResponse,
     })
   )
 );
