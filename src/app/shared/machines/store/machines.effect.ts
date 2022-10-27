@@ -33,7 +33,6 @@ export class MachinesEffect {
                 machine.machine_state
               );
             });
-            console.log(machinesResponse);
             return getMachinesSuccessAction({ machinesResponse });
           }),
           catchError(() => {
